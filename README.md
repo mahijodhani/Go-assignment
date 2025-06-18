@@ -18,15 +18,15 @@ go run main.go
 Server starts at: http://localhost:8080
 
 ## API Endpoints
-# POST /add
+### POST /add
 To add a number to the list:
 Invoke-RestMethod -Uri http://localhost:8080/add -Method Post -Body (@{ number = 10 } | ConvertTo-Json) -ContentType "application/json"
 
-# GET /list
+### GET /list
 To view the list:
 http://localhost:8080/list
 
-## Exaample
+## Example
 Input: 10
 Output: [10]
 
