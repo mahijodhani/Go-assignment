@@ -36,28 +36,28 @@ Output: [10, 10]
 Input: -8
 Output: [2, 10]
 
-[PS C:\Users\HP\OneDrive\Documents\go-app>  Invoke-RestMethod -Uri http://localhost:8080/add -Method Post -Body (@{ number = 10 } | ConvertTo-Json) -ContentType "application/json"
+PS C:\Users\HP\OneDrive\Documents\go-app>  Invoke-RestMethod -Uri http://localhost:8080/add -Method Post -Body (@{ number = 10 } | ConvertTo-Json) -ContentType "application/json"
 list    
-----
+
 {10, 10}
 PS C:\Users\HP\OneDrive\Documents\go-app>  Invoke-RestMethod -Uri http://localhost:8080/add -Method Post -Body (@{ number = -8 } | ConvertTo-Json) -ContentType "application/json"
 list
-----
+
 {2, 10}
-]
+
 
 ## Unit Test
 To test the getSign() function:
 In terminal or powershell:
 go test
 
-{It checks:
+It checks:
 Positive input → returns 1
 Negative input → returns -1
-Zero input → returns 0}
+Zero input → returns 0
 
 ## List Behavior Summary
-Starts empty: []
+Starts empty:[]
 If same sign: append to list
 If opposite sign: subtract value from leftmost (FIFO)
 List is updated and returned after each /add
